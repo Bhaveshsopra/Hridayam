@@ -1,0 +1,309 @@
+{
+  "places": [
+    {
+      "id": "khajuraho",
+      "name": "Khajuraho Temples",
+      "city": "Chhatarpur",
+      "district": "Chhatarpur",
+      "type": ["heritage", "history", "architecture", "unesco"],
+      "description": "Medieval Hindu and Jain temples with intricate carvings",
+      "entry_fee": 40,
+      "foreign_fee": 600,
+      "best_time": "Oct-Mar",
+      "visit_duration_hours": 4,
+      "rating": 4.7,
+      "coordinates": {"lat": 24.8318, "lng": 79.9199},
+      "nearby_food": ["Mediterraneo", "Raja Cafe", "Bella Italia"],
+      "safety_score": 92,
+      "avg_crowd": {"morning": 3, "afternoon": 7, "evening": 5},
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Lakshmana_Temple_Khajuraho_2013.jpg/1280px-Lakshmana_Temple_Khajuraho_2013.jpg",
+      "highlights": [
+        "Western Temple Group",
+        "Light & Sound Show",
+        "Archaeological Museum",
+        "Eastern Group - Jain Temples"
+      ]
+    },
+    {
+      "id": "sanchi",
+      "name": "Sanchi Stupa",
+      "city": "Sanchi",
+      "district": "Raisen",
+      "type": ["heritage", "buddhist", "history", "unesco"],
+      "description": "Emperor Ashoka's 3rd century BCE Buddhist stupa",
+      "entry_fee": 30,
+      "foreign_fee": 500,
+      "best_time": "Nov-Feb",
+      "visit_duration_hours": 3,
+      "rating": 4.5,
+      "coordinates": {"lat": 23.4793, "lng": 77.7399},
+      "nearby_food": ["Gateway Retreat Restaurant", "Local Dhabas"],
+      "safety_score": 95,
+      "avg_crowd": {"morning": 2, "afternoon": 5, "evening": 3},
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Stupa1_front_NorthGate_Sanchi_2013.jpg/1280px-Stupa1_front_NorthGate_Sanchi_2013.jpg",
+      "highlights": [
+        "Great Stupa (Stupa 1)",
+        "Ashoka Pillar",
+        "Carved Gateways (Toranas)",
+        "Archaeological Museum"
+      ]
+    },
+    {
+      "id": "ujjain",
+      "name": "Ujjain Mahakaleshwar",
+      "city": "Ujjain",
+      "district": "Ujjain",
+      "type": ["spiritual", "temple", "history", "jyotirlinga"],
+      "description": "One of India's 12 sacred Jyotirlingas",
+      "entry_fee": 0,
+      "foreign_fee": 0,
+      "best_time": "Oct-Mar",
+      "visit_duration_hours": 3,
+      "rating": 4.8,
+      "coordinates": {"lat": 23.1828, "lng": 75.7682},
+      "nearby_food": ["Shree Ganga", "Chappan Dukan"],
+      "safety_score": 88,
+      "avg_crowd": {"morning": 9, "afternoon": 6, "evening": 7},
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mahakaleshwar_temple.jpg/800px-Mahakaleshwar_temple.jpg",
+      "highlights": [
+        "Bhasma Aarti (4 AM)",
+        "Ram Ghat",
+        "Kal Bhairav Temple",
+        "Vedh Shala (Observatory)"
+      ]
+    },
+    {
+      "id": "pachmarhi",
+      "name": "Pachmarhi",
+      "city": "Pachmarhi",
+      "district": "Narmadapuram",
+      "type": ["nature", "hill_station", "adventure", "wildlife"],
+      "description": "MP's only hill station in Satpura range",
+      "entry_fee": 25,
+      "foreign_fee": 200,
+      "best_time": "Oct-Jun",
+      "visit_duration_hours": 48,
+      "rating": 4.6,
+      "coordinates": {"lat": 22.4675, "lng": 78.4340},
+      "nearby_food": ["Hotel Satpura Retreat", "Rock End Manor"],
+      "safety_score": 90,
+      "avg_crowd": {"morning": 3, "afternoon": 5, "evening": 2},
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Pachmarhi.jpg/1280px-Pachmarhi.jpg",
+      "highlights": [
+        "Bee Falls",
+        "Pandav Caves",
+        "Dhoopgarh Sunset Point",
+        "Satpura National Park"
+      ]
+    },
+    {
+      "id": "bhimbetka",
+      "name": "Bhimbetka Caves",
+      "city": "Bhimbetka",
+      "district": "Raisen",
+      "type": ["heritage", "prehistoric", "history", "unesco", "caves"],
+      "description": "30,000-year-old rock shelters with cave paintings",
+      "entry_fee": 25,
+      "foreign_fee": 300,
+      "best_time": "Jul-Mar",
+      "visit_duration_hours": 3,
+      "rating": 4.4,
+      "coordinates": {"lat": 22.9375, "lng": 77.6120},
+      "nearby_food": ["Nearby dhabas on highway"],
+      "safety_score": 93,
+      "avg_crowd": {"morning": 2, "afternoon": 4, "evening": 2},
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Bhimbetka_rock_painting.jpg/1280px-Bhimbetka_rock_painting.jpg",
+      "highlights": [
+        "Auditorium Rock",
+        "Zoo Rock Shelter",
+        "Mesolithic Paintings",
+        "UNESCO Heritage Walk"
+      ]
+    },
+    {
+      "id": "orchha",
+      "name": "Orchha Fort Complex",
+      "city": "Orchha",
+      "district": "Niwari",
+      "type": ["heritage", "history", "fort", "architecture"],
+      "description": "16th century Bundela Rajput fort and palaces",
+      "entry_fee": 25,
+      "foreign_fee": 300,
+      "best_time": "Oct-Mar",
+      "visit_duration_hours": 5,
+      "rating": 4.5,
+      "coordinates": {"lat": 25.3520, "lng": 78.6420},
+      "nearby_food": ["Sheesh Mahal Restaurant", "Ram Raja Hotel"],
+      "safety_score": 91,
+      "avg_crowd": {"morning": 2, "afternoon": 4, "evening": 3},
+      "highlights": [
+        "Jahangir Mahal",
+        "Raja Mahal",
+        "Ram Raja Temple",
+        "Chaturbhuj Temple"
+      ]
+    },
+    {
+      "id": "gwalior",
+      "name": "Gwalior Fort",
+      "city": "Gwalior",
+      "district": "Gwalior",
+      "type": ["heritage", "history", "fort", "architecture"],
+      "description": "Massive hilltop fort called 'Pearl among fortresses'",
+      "entry_fee": 75,
+      "foreign_fee": 250,
+      "best_time": "Oct-Mar",
+      "visit_duration_hours": 4,
+      "rating": 4.6,
+      "coordinates": {"lat": 26.2310, "lng": 78.1690},
+      "nearby_food": ["Kwality Restaurant", "Indian Coffee House"],
+      "safety_score": 89,
+      "avg_crowd": {"morning": 3, "afternoon": 6, "evening": 4},
+      "highlights": [
+        "Man Singh Palace",
+        "Teli Ka Mandir",
+        "Sas Bahu Temples",
+        "Light & Sound Show"
+      ]
+    },
+    {
+      "id": "bandhavgarh",
+      "name": "Bandhavgarh National Park",
+      "city": "Umaria",
+      "district": "Umaria",
+      "type": ["wildlife", "nature", "tiger", "adventure"],
+      "description": "Highest density of Bengal tigers in India",
+      "entry_fee": 1500,
+      "foreign_fee": 4500,
+      "best_time": "Oct-Jun",
+      "visit_duration_hours": 24,
+      "rating": 4.7,
+      "coordinates": {"lat": 23.7250, "lng": 80.9600},
+      "nearby_food": ["Park lodges", "Tala village eateries"],
+      "safety_score": 85,
+      "avg_crowd": {"morning": 5, "afternoon": 3, "evening": 4},
+      "highlights": [
+        "Tiger Safari",
+        "Bandhavgarh Fort",
+        "Shesh Shaiya",
+        "Bird Watching"
+      ]
+    },
+    {
+      "id": "mandu",
+      "name": "Mandu (City of Joy)",
+      "city": "Mandu",
+      "district": "Dhar",
+      "type": ["heritage", "history", "romance", "architecture"],
+      "description": "Ancient fortress city with Afghan architecture",
+      "entry_fee": 25,
+      "foreign_fee": 300,
+      "best_time": "Jul-Mar",
+      "visit_duration_hours": 6,
+      "rating": 4.4,
+      "coordinates": {"lat": 22.3660, "lng": 75.3940},
+      "nearby_food": ["Malwa Retreat", "Local street food"],
+      "safety_score": 87,
+      "avg_crowd": {"morning": 2, "afternoon": 3, "evening": 2},
+      "highlights": [
+        "Jahaz Mahal (Ship Palace)",
+        "Hindola Mahal",
+        "Rani Roopmati Pavilion",
+        "Baz Bahadur Palace"
+      ]
+    },
+    {
+      "id": "kanha",
+      "name": "Kanha National Park",
+      "city": "Mandla",
+      "district": "Mandla",
+      "type": ["wildlife", "nature", "tiger", "adventure"],
+      "description": "Inspiration for Kipling's Jungle Book",
+      "entry_fee": 1500,
+      "foreign_fee": 4500,
+      "best_time": "Oct-Jun",
+      "visit_duration_hours": 24,
+      "rating": 4.6,
+      "coordinates": {"lat": 22.3340, "lng": 80.6120},
+      "nearby_food": ["Park lodges", "Khatia village"],
+      "safety_score": 86,
+      "avg_crowd": {"morning": 5, "afternoon": 2, "evening": 4},
+      "highlights": [
+        "Tiger Safari",
+        "Bamni Dadar (Sunset Point)",
+        "Barasingha Deer",
+        "Nature Walks"
+      ]
+    },
+    {
+      "id": "omkareshwar",
+      "name": "Omkareshwar Temple",
+      "city": "Omkareshwar",
+      "district": "Khandwa",
+      "type": ["spiritual", "temple", "jyotirlinga", "island"],
+      "description": "Sacred island shaped like Om symbol with Jyotirlinga",
+      "entry_fee": 0,
+      "foreign_fee": 0,
+      "best_time": "Oct-Mar",
+      "visit_duration_hours": 4,
+      "rating": 4.5,
+      "coordinates": {"lat": 22.2452, "lng": 76.1510},
+      "nearby_food": ["Temple area prasad", "Local restaurants"],
+      "safety_score": 88,
+      "avg_crowd": {"morning": 7, "afternoon": 5, "evening": 6},
+      "highlights": [
+        "Omkareshwar Jyotirlinga",
+        "Mamaleshwar Temple",
+        "Island Parikrama",
+        "Narmada River Boat Ride"
+      ]
+    },
+    {
+      "id": "bhopal",
+      "name": "Bhopal City",
+      "city": "Bhopal",
+      "district": "Bhopal",
+      "type": ["city", "lakes", "heritage", "culture", "food"],
+      "description": "City of Lakes - MP's capital with rich Nawabi heritage",
+      "entry_fee": 0,
+      "foreign_fee": 0,
+      "best_time": "Oct-Mar",
+      "visit_duration_hours": 24,
+      "rating": 4.3,
+      "coordinates": {"lat": 23.2599, "lng": 77.4126},
+      "nearby_food": [
+        "Chatori Gali",
+        "Jehan Numa Palace",
+        "Manohar Dairy"
+      ],
+      "safety_score": 90,
+      "avg_crowd": {"morning": 4, "afternoon": 6, "evening": 5},
+      "highlights": [
+        "Upper Lake",
+        "Taj-ul-Masajid",
+        "Tribal Museum (IGRMS)",
+        "Van Vihar National Park"
+      ]
+    }
+  ],
+  "transport_costs": {
+    "bus_per_km": 1.5,
+    "train_sleeper_per_km": 0.8,
+    "train_ac_per_km": 2.5,
+    "taxi_per_km": 12,
+    "auto_per_km": 8,
+    "flight_bhopal_khajuraho": 3500,
+    "flight_bhopal_indore": 2800
+  },
+  "accommodation": {
+    "budget": {"min": 400, "max": 1000, "label": "Budget Stay"},
+    "mid_range": {"min": 1000, "max": 3000, "label": "Mid-Range Hotel"},
+    "premium": {"min": 3000, "max": 8000, "label": "Premium Hotel"},
+    "luxury": {"min": 8000, "max": 25000, "label": "Luxury Heritage"}
+  },
+  "food_costs": {
+    "budget": {"breakfast": 80, "lunch": 120, "dinner": 150, "snacks": 50},
+    "mid_range": {"breakfast": 200, "lunch": 350, "dinner": 450, "snacks": 100},
+    "premium": {"breakfast": 500, "lunch": 800, "dinner": 1200, "snacks": 200}
+  }
+}

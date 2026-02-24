@@ -1,0 +1,112 @@
+{
+  "bhopal": {
+    "must_try": [
+      {
+        "name": "Bhopal ki Biryani",
+        "type": "Non-Veg",
+        "price_range": "₹150-400",
+        "where": "Chatori Gali, Old Bhopal"
+      },
+      {
+        "name": "Poha Jalebi",
+        "type": "Veg",
+        "price_range": "₹30-60",
+        "where": "Street stalls across city"
+      },
+      {
+        "name": "Rogan Josh",
+        "type": "Non-Veg",
+        "price_range": "₹200-500",
+        "where": "Jehan Numa Palace"
+      },
+      {
+        "name": "Mawa Bati",
+        "type": "Sweet",
+        "price_range": "₹40-80",
+        "where": "Manohar Dairy"
+      }
+    ],
+    "restaurants": [
+      "Manohar Dairy & Restaurant",
+      "Bapu Ki Kutia",
+      "Under the Mango Tree",
+      "Jehan Numa Palace Dining"
+    ]
+  },
+  "ujjain": {
+    "must_try": [
+      {
+        "name": "Dal Bafla",
+        "type": "Veg",
+        "price_range": "₹60-120",
+        "where": "Chappan Dukan"
+      },
+      {
+        "name": "Malpua",
+        "type": "Sweet",
+        "price_range": "₹30-60",
+        "where": "Near Mahakal Temple"
+      }
+    ],
+    "restaurants": [
+      "Shree Ganga Restaurant",
+      "Chappan Dukan Market",
+      "Sudama Restaurant"
+    ]
+  },
+  "indore": {
+    "must_try": [
+      {
+        "name": "Poha",
+        "type": "Veg",
+        "price_range": "₹20-40",
+        "where": "Chappan Dukan"
+      },
+      {
+        "name": "Garadu (Yam Fry)",
+        "type": "Veg",
+        "price_range": "₹30-60",
+        "where": "Sarafa Bazaar (Night)"
+      },
+      {
+        "name": "Bhutte Ka Kees",
+        "type": "Veg",
+        "price_range": "₹40-80",
+        "where": "Street vendors"
+      },
+      {
+        "name": "Joshi Dahi Vada",
+        "type": "Veg",
+        "price_range": "₹50-80",
+        "where": "Multiple outlets"
+      }
+    ],
+    "restaurants": [
+      "Sarafa Night Market",
+      "Chappan Dukan",
+      "Nafees Restaurant",
+      "Young Tarang"
+    ]
+  },
+  "gwalior": {
+    "must_try": [
+      {
+        "name": "Bedai with Sabzi",
+        "type": "Veg",
+        "price_range": "₹30-50",
+        "where": "Near fort area"
+      },
+      {
+        "name": "Gajak",
+        "type": "Sweet",
+        "price_range": "₹100-300/kg",
+        "where": "Gwalior shops"
+      }
+    ],
+    "restaurants": [
+      "Kwality Restaurant",
+      "Indian Coffee House",
+      "Silver Saloon"
+    ]
+  }
+}
