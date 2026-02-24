@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>AI Smart Tourism MP</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/mp-bg.jpg" alt="">
+    </div>
+
+    <!-- header -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              AI Smart Tourism MP
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Project</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="book.html">Plan Your Trip</a>
+              </li>
+            </ul>
+
+            <div class="user_option">
+              <a href="" class="user_link">
+                <i class="fa fa-user"></i>
+              </a>
+
+              <a class="cart_link" href="#">
+                <!-- icon same -->
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.029 456.029">
+                  <g>
+                    <path
+                      d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
+                  </g>
+                </svg>
+              </a>
+
+              <form class="form-inline">
+                <button class="btn nav_search-btn" type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+
+              <a href="" class="order_online">
+                Explore MP
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- TRIP PLANNER SECTION -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          AI Trip Planner
+        </h2>
+        <p style="color:white;">Plan your Madhya Pradesh trip using Artificial Intelligence</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="text" class="form-control" placeholder="Your Name" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Budget (₹)" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Your Email" />
+              </div>
+
+              <div>
+                <select class="form-control nice-select wide">
+                  <option disabled selected>Select Travel Interest</option>
+                  <option>Historical Places</option>
+                  <option>Temples & Spiritual</option>
+                  <option>Nature & Hill Stations</option>
+                  <option>Wildlife</option>
+                  <option>Full MP Tour</option>
+                </select>
+              </div>
+
+              <div>
+                <input type="date" class="form-control">
+              </div>
+
+              <div class="btn_box">
+                <button>
+                  Generate AI Travel Plan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="map_container ">
+            <div id="googleMap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>Project Info</h4>
+            <div class="contact_link_box">
+              <a href=""><i class="fa fa-map-marker"></i>
+                <span>Madhya Pradesh Tourism</span></a>
+
+              <a href=""><i class="fa fa-phone"></i>
+                <span>AI Travel Support</span></a>
+
+              <a href=""><i class="fa fa-envelope"></i>
+                <span>aismartsupport@gmail.com</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              AI Smart Tourism
+            </a>
+            <p>
+              Smart AI-based tourism platform for Madhya Pradesh providing safety monitoring,
+              budget planning, travel itinerary, food guide, and historical information.
+            </p>
+
+            <div class="footer_social">
+              <a href=""><i class="fa fa-facebook"></i></a>
+              <a href=""><i class="fa fa-instagram"></i></a>
+              <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 footer-col">
+          <h4>AI Features</h4>
+          <p>✔ AI Trip Planner</p>
+          <p>✔ Tourist Safety Monitoring</p>
+          <p>✔ Crowd Prediction</p>
+          <p>✔ Multilingual Chatbot</p>
+        </div>
+
+      </div>
+
+      <div class="footer-info">
+        <p>
+          AI Smart Tourism MP - College Project + Startup Idea <br>
+          Developed by Bhavesh
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+</body>
+</html>

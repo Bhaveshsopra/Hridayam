@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="AI Smart Tourism for Madhya Pradesh - Travel Smart, Safe & Personalized with AI" />
+  <title>Explore the Heart of India</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C96A;
+      --gold-dim: rgba(201,168,76,0.15);
+      --blue-deep: #050D1A;
+      --blue-mid: #0A1628;
+      --blue-card: #0D1F38;
+      --blue-accent: #1A3A6B;
+      --cyan: #00D4FF;
+      --cyan-dim: rgba(0,212,255,0.1);
+      --white: #F0EDE6;
+      --white-dim: rgba(240,237,230,0.7);
+      --text-muted: rgba(240,237,230,0.45);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--blue-deep);
+      color: var(--white);
+      font-family: 'Crimson Pro', serif;
+      font-size: 18px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--blue-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ─── ANIMATED GRID BACKGROUND ─── */
+    .grid-bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .grid-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,212,255,0.06) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.05) 0%, transparent 50%);
+    }
+
+    /* ─── NOISE TEXTURE ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 40px;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(5,13,26,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      animation: slideDown 0.8s ease both;
+    }
+
+    @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    .nav-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo span.logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--gold), var(--cyan));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; color: var(--blue-deep);
+    }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--gold);
+      transform: scaleX(0); transition: transform 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-deep);
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border: none; cursor: pointer;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.3s, transform 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg, rgba(5,13,26,0.95) 0%, rgba(10,22,40,0.7) 50%, rgba(5,13,26,0.97) 100%),
+        url('https://images.unsplash.com/photo-1599050751795-6cdaafbc2319?w=1600&q=80') center/cover;
+      z-index: -1;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(0,212,255,0.4);
+      background: rgba(0,212,255,0.07);
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 32px;
+      animation: fadeUp 1s 0.3s both;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(1.5); } }
+
+    .hero-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      animation: fadeUp 1s 0.5s both;
+    }
+    .hero-title .line1 { color: var(--white); display: block; }
+    .hero-title .line2 {
+      display: block;
+      background: linear-gradient(90deg, var(--gold), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-tagline {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--gold-light);
+      margin: 20px 0 16px;
+      animation: fadeUp 1s 0.7s both;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--white-dim);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      animation: fadeUp 1s 0.9s both;
+    }
+
+    .hero-actions {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 1s 1.1s both;
+    }
+
+    .btn-primary-glow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue-deep);
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border: none; cursor: pointer;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+      box-shadow: 0 0 40px rgba(201,168,76,0.4), 0 0 80px rgba(201,168,76,0.15);
+    }
+    .btn-primary-glow:hover { transform: translateY(-2px); }
+    .btn-primary-glow::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+    }
+    .btn-primary-glow:hover::after { transform: translateX(100%); }
+
+    .btn-outline-glow {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: transparent;
+      border: 1px solid rgba(0,212,255,0.5);
+      cursor: pointer;
+      padding: 16px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-outline-glow:hover { background: var(--cyan-dim); transform: translateY(-2px); }
+
+    .hero-stats {
+      margin-top: 80px;
+      display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;
+      animation: fadeUp 1s 1.3s both;
+    }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--gold);
+    }
+    .stat-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Floating particles */
+    .particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: -1; }
+    .particle {
+      position: absolute;
+      width: 2px; height: 2px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: float linear infinite;
+    }
+    @keyframes float {
+      from { transform: translateY(100vh) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      to { transform: translateY(-100px) translateX(var(--drift)); opacity: 0; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ─── SECTION BASE ─── */
+    section { position: relative; z-index: 1; }
+    .section-pad { padding: 100px 40px; }
+    .container-xl { max-width: 1280px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 12px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 32px; height: 1px; background: var(--cyan);
+    }
+
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-title .gold { color: var(--gold); }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--white-dim);
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.25;
+      margin: 0;
+    }
+
+    /* ─── FEATURES ─── */
+    #features { background: var(--blue-mid); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .feature-card {
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 12px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,168,76,0.35);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(201,168,76,0.08);
+    }
+    .feature-card:hover::before { transform: scaleX(1); }
+
+    .feature-icon {
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+    .feature-card:hover .feature-icon { background: rgba(201,168,76,0.22); }
+
+    .feature-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .feature-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
+
+    .feature-tag {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(0,212,255,0.2);
+    }
+
+    /* ─── ITINERARY ─── */
+    #itinerary { background: var(--blue-deep); }
+    .itinerary-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+    @media (max-width: 900px) { .itinerary-layout { grid-template-columns: 1fr; gap: 48px; } }
+
+    .itinerary-steps { display: flex; flex-direction: column; gap: 8px; }
+    .step {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 24px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: background 0.3s, border-color 0.3s;
+      cursor: default;
+    }
+    .step:hover { background: var(--blue-card); border-color: rgba(201,168,76,0.2); }
+    .step-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem; font-weight: 900;
+      color: rgba(201,168,76,0.2);
+      line-height: 1;
+      min-width: 48px;
+      transition: color 0.3s;
+    }
+    .step:hover .step-num { color: var(--gold); }
+    .step-content h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .step-content p { font-size: 0.92rem; color: var(--text-muted); }
+
+    .itinerary-preview {
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.18);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .itinerary-preview::before {
+      content: 'AI GENERATING...';
+      position: absolute; top: 16px; right: 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+    .preview-header {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .day-plan { margin-bottom: 20px; }
+    .day-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .day-items { display: flex; flex-direction: column; gap: 6px; }
+    .day-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.88rem; color: var(--white-dim);
+    }
+    .day-item::before { content: '→'; color: var(--gold); font-size: 0.75rem; }
+
+    .itinerary-cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ─── SAFETY ─── */
+    #safety { background: var(--blue-mid); }
+
+    .safety-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px; }
+    @media (max-width: 600px) { .safety-grid { grid-template-columns: 1fr; } }
+
+    .safety-card {
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 12px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .safety-card:hover { transform: translateY(-4px); border-color: rgba(0,212,255,0.3); }
+
+    .safety-card.red-glow { border-color: rgba(255, 60, 60, 0.2); }
+    .safety-card.red-glow:hover { border-color: rgba(255, 60, 60, 0.5); box-shadow: 0 0 40px rgba(255,60,60,0.1); }
+
+    .safety-icon-wrap {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .safety-icon-wrap.gold-bg { background: var(--gold-dim); border: 1px solid rgba(201,168,76,0.3); }
+    .safety-icon-wrap.cyan-bg { background: var(--cyan-dim); border: 1px solid rgba(0,212,255,0.2); }
+    .safety-icon-wrap.red-bg { background: rgba(255,60,60,0.1); border: 1px solid rgba(255,60,60,0.3); }
+    .safety-icon-wrap.purple-bg { background: rgba(140,60,255,0.1); border: 1px solid rgba(140,60,255,0.3); }
+
+    .safety-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .safety-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
+
+    .sos-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 16px;
+      background: rgba(255,40,40,0.15);
+      border: 1px solid rgba(255,40,40,0.4);
+      color: #ff6060;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 18px; border-radius: 100px;
+      cursor: pointer;
+      animation: sos-pulse 2s infinite;
+    }
+    @keyframes sos-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(255,40,40,0.4); } 50% { box-shadow: 0 0 0 8px rgba(255,40,40,0); } }
+
+    /* ─── PLACES ─── */
+    #explore { background: var(--blue-deep); }
+
+    .places-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 60px; }
+
+    .place-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/5;
+      cursor: default;
+      transition: transform 0.4s;
+    }
+    .place-card:hover { transform: scale(1.02); }
+
+    .place-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .place-card:hover .place-img { transform: scale(1.08); }
+
+    .place-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(5,13,26,0.97) 0%, rgba(5,13,26,0.3) 50%, transparent 80%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 28px 24px;
+    }
+
+    .place-tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .place-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .place-desc { font-size: 0.85rem; color: var(--white-dim); line-height: 1.6; }
+
+    .place-meta {
+      display: flex; align-items: center; gap: 16px;
+      margin-top: 14px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+    .place-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ─── FUTURE SCOPE ─── */
+    #future { background: var(--blue-mid); }
+
+    .future-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; margin-top: 60px; }
+    @media (max-width: 900px) { .future-layout { grid-template-columns: 1fr; gap: 48px; } }
+
+    .future-items { display: flex; flex-direction: column; gap: 20px; }
+    .future-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px;
+      border-radius: 10px;
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.1);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .future-item:hover { border-color: rgba(201,168,76,0.3); transform: translateX(6px); }
+    .future-item-icon { font-size: 1.5rem; min-width: 36px; margin-top: 2px; }
+    .future-item h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--white); margin-bottom: 6px;
+    }
+    .future-item p { font-size: 0.88rem; color: var(--text-muted); }
+
+    .roadmap {
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .roadmap-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .roadmap-line { display: flex; flex-direction: column; gap: 0; }
+    .roadmap-item {
+      display: flex; gap: 20px;
+      position: relative;
+    }
+    .roadmap-item + .roadmap-item { margin-top: 0; }
+    .roadmap-item .line-col { display: flex; flex-direction: column; align-items: center; }
+    .roadmap-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--blue-card);
+      box-shadow: 0 0 12px rgba(201,168,76,0.6);
+      flex-shrink: 0;
+    }
+    .roadmap-dot.future { background: var(--blue-accent); box-shadow: none; border-color: rgba(201,168,76,0.3); }
+    .roadmap-connector { flex: 1; width: 1px; background: rgba(201,168,76,0.15); min-height: 40px; }
+    .roadmap-content { padding: 0 0 32px 4px; }
+    .roadmap-phase {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem; letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .roadmap-desc { font-size: 0.9rem; color: var(--white); }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--blue-deep); }
+
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; }
+    @media (max-width: 800px) { .contact-layout { grid-template-columns: 1fr; } }
+
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px;
+      border-radius: 10px;
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.1);
+    }
+    .contact-item i { color: var(--gold); font-size: 1.1rem; margin-top: 2px; min-width: 20px; }
+    .contact-item-text h5 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .contact-item-text p { font-size: 0.95rem; color: var(--white); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 6px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: rgba(201,168,76,0.5); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--blue-card); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: rgba(5,13,26,0.95);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: 60px 40px 32px;
+      position: relative; z-index: 1;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; max-width: 1280px; margin: 0 auto; }
+    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    .footer-brand .logo-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: 0.9rem; color: var(--text-muted); max-width: 280px; line-height: 1.7; }
+
+    .footer-project-badge {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--gold-dim);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+    .social-btn {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: var(--blue-card);
+      border: 1px solid rgba(201,168,76,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .social-btn:hover { color: var(--gold); border-color: rgba(201,168,76,0.4); }
+
+    .footer-links h5 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links li a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links li a:hover { color: var(--white); }
+
+    .footer-hours h5 {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hours-item { margin-bottom: 10px; }
+    .hours-item .day { font-size: 0.82rem; color: var(--text-muted); }
+    .hours-item .time { font-size: 0.9rem; color: var(--white); }
+
+    .footer-bottom {
+      max-width: 1280px; margin: 48px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    /* ─── RESPONSIVE NAV ─── */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--white); margin: 5px 0; transition: transform 0.3s; }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links-wrap {
+        position: fixed; top: 72px; left: 0; right: 0;
+        background: rgba(5,13,26,0.97);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(201,168,76,0.15);
+        padding: 24px 20px;
+        display: none;
+        flex-direction: column; gap: 20px;
+      }
+      .nav-links-wrap.open { display: flex; }
+      .nav-links { flex-direction: column; gap: 20px; }
+      .nav-toggle { display: block; }
+      .section-pad { padding: 70px 20px; }
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── TICKER ─── */
+    .ticker-wrap {
+      background: var(--blue-card);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      overflow: hidden;
+      padding: 10px 0;
+      position: relative; z-index: 1;
+    }
+    .ticker {
+      display: flex;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+      gap: 80px;
+    }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker span {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .ticker span .sep { color: var(--gold); margin: 0 8px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Grid background -->
+  <div class="grid-bg"></div>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <a class="nav-logo" href="#hero">
+      <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+      HRIDAYAM
+    </a>
+
+    <button class="nav-toggle" onclick="this.classList.toggle('active'); document.querySelector('.nav-links-wrap').classList.toggle('open');" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links-wrap">
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#itinerary">Itinerary</a></li>
+        <li><a href="#safety">Safety</a></li>
+        <li><a href="#explore">Explore MP</a></li>
+        <li><a href="#future">Future</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <a href="#itinerary" class="nav-cta">Plan Your Trip</a>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Explore the 'Heart of India'
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line1">Life is Short and</span>
+      <span class="line2">The World is Wide</span>
+    </h1>
+
+    <p class="hero-tagline">Travel Smart, Safe &amp; Personalized with AI</p>
+
+    <p class="hero-sub">Plan trips, ensure safety, and explore the heart of India's rich history using intelligent AI technology built for modern travelers.</p>
+
+    <div class="hero-actions">
+      <a href="#itinerary" class="btn-primary-glow">
+        <i class="fa-solid fa-route"></i> &nbsp; Plan Your Trip
+      </a>
+      <a href="#features" class="btn-outline-glow">
+        <i class="fa-solid fa-microchip"></i> &nbsp; Explore Features
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Tourist Destinations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8</div>
+        <div class="stat-label">AI Core Modules</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Safety Monitoring</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12+</div>
+        <div class="stat-label">Languages Supported</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TICKER ─── -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>Khajuraho<span class="sep">✦</span></span>
+      <span>Sanchi Stupa<span class="sep">✦</span></span>
+      <span>Ujjain Mahakal<span class="sep">✦</span></span>
+      <span>Pachmarhi<span class="sep">✦</span></span>
+      <span>Bhimbetka Caves<span class="sep">✦</span></span>
+      <span>Orchha Fort<span class="sep">✦</span></span>
+      <span>Bandhavgarh Tiger Reserve<span class="sep">✦</span></span>
+      <span>Mandu<span class="sep">✦</span></span>
+      <span>Gwalior Fort<span class="sep">✦</span></span>
+      <span>AI Travel Planner<span class="sep">✦</span></span>
+      <span>Smart Safety<span class="sep">✦</span></span>
+      <span>Budget AI<span class="sep">✦</span></span>
+      <!-- repeat for seamless loop -->
+      <span>Khajuraho<span class="sep">✦</span></span>
+      <span>Sanchi Stupa<span class="sep">✦</span></span>
+      <span>Ujjain Mahakal<span class="sep">✦</span></span>
+      <span>Pachmarhi<span class="sep">✦</span></span>
+      <span>Bhimbetka Caves<span class="sep">✦</span></span>
+      <span>Orchha Fort<span class="sep">✦</span></span>
+      <span>Bandhavgarh Tiger Reserve<span class="sep">✦</span></span>
+      <span>Mandu<span class="sep">✦</span></span>
+      <span>Gwalior Fort<span class="sep">✦</span></span>
+      <span>AI Travel Planner<span class="sep">✦</span></span>
+      <span>Smart Safety<span class="sep">✦</span></span>
+      <span>Budget AI<span class="sep">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ─── FEATURES ─── -->
+  <section id="features" class="section-pad">
+    <div class="container-xl">
+      <div class="reveal">
+        <div class="section-label">Core Capabilities</div>
+        <h2 class="section-title">8 AI-Powered <span class="gold">Features</span></h2>
+        <p class="section-desc">Our intelligent platform uses cutting-edge machine learning and data analytics to enhance every aspect of your Madhya Pradesh journey.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🧠</div>
+          <div class="feature-name">AI Travel Planner</div>
+          <p class="feature-desc">Generate customized itineraries based on your budget, duration, and interests. Our AI processes thousands of travel patterns to craft your perfect trip.</p>
+          <span class="feature-tag">Machine Learning</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-name">Tourist Safety Monitoring</div>
+          <p class="feature-desc">Real-time GPS tracking, emergency alerts, and crowd density analysis ensure you stay safe at every tourist location across MP.</p>
+          <span class="feature-tag">Real-Time AI</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">💰</div>
+          <div class="feature-name">AI Budget Planner</div>
+          <p class="feature-desc">Smart expense forecasting with live price data. Plan hotel, transport, food, and entry fees within your exact budget constraints.</p>
+          <span class="feature-tag">Predictive Analytics</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">🌐</div>
+          <div class="feature-name">Multilingual Chatbot</div>
+          <p class="feature-desc">Converse in Hindi, English, and 10+ regional languages. Our NLP chatbot provides instant answers to any tourism query 24/7.</p>
+          <span class="feature-tag">NLP · LLM</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">🍜</div>
+          <div class="feature-name">Food &amp; Shopping Guide</div>
+          <p class="feature-desc">AI-curated local dining recommendations and authentic marketplace guides based on your preferences, allergies, and location.</p>
+          <span class="feature-tag">Recommendation Engine</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">⛅</div>
+          <div class="feature-name">Weather Prediction</div>
+          <p class="feature-desc">Hyper-local weather forecasts for all MP destinations integrated with your trip schedule for optimal travel timing.</p>
+          <span class="feature-tag">Meteorological AI</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">👥</div>
+          <div class="feature-name">Crowd Prediction</div>
+          <p class="feature-desc">ML models analyze historical visitor data to predict peak times at monuments, helping you visit popular sites without crowds.</p>
+          <span class="feature-tag">Time-Series ML</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">🎙️</div>
+          <div class="feature-name">AI Tour Guide</div>
+          <p class="feature-desc">Voice-activated audio guides with AR overlays at historical sites. Get rich historical narratives in your language, on demand.</p>
+          <span class="feature-tag">Computer Vision · AR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── ITINERARY ─── -->
+  <section id="itinerary" class="section-pad">
+    <div class="container-xl">
+      <div class="reveal">
+        <div class="section-label">Smart Planning</div>
+        <h2 class="section-title">AI Creates Your <span class="gold">Perfect Itinerary</span></h2>
+        <p class="section-desc">Just tell us your preferences — our AI does the rest. Three inputs, one perfect trip plan.</p>
+      </div>
+
+      <div class="itinerary-layout">
+        <div class="itinerary-steps reveal">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h4>Set Your Budget</h4>
+              <p>Enter your total travel budget. AI optimizes every rupee — accommodation, transport, meals, and entry fees.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h4>Choose Your Days</h4>
+              <p>Select how many days you have. The AI clusters destinations efficiently to minimize travel time and maximize experiences.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h4>Pick Your Interests</h4>
+              <p>History? Wildlife? Spirituality? Adventure? Your interests shape a completely unique, personalized journey through MP.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h4>Get Your AI Trip Plan</h4>
+              <p>Receive a complete day-by-day itinerary with maps, timings, food stops, safety tips, and weather forecasts — instantly.</p>
+            </div>
+          </div>
+
+          <div class="itinerary-cta" style="padding: 24px;">
+            <a href="#contact" class="btn-primary-glow">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> &nbsp; Generate Trip Plan
+            </a>
+          </div>
+        </div>
+
+        <div class="itinerary-preview reveal">
+          <div class="preview-header">
+            ✦ AI Generated Itinerary — Madhya Pradesh Heritage Tour
+          </div>
+
+          <div class="day-plan">
+            <div class="day-label">▸ DAY 01 — BHOPAL → SANCHI</div>
+            <div class="day-items">
+              <div class="day-item">Arrive Bhopal, check in (Budget: ₹800/night)</div>
+              <div class="day-item">Sanchi Stupa — AI audio guide (UNESCO site)</div>
+              <div class="day-item">Local cuisine at Chatori Gali</div>
+              <div class="day-item">Evening: Bhimbetka rock shelters</div>
+            </div>
+          </div>
+
+          <div class="day-plan">
+            <div class="day-label">▸ DAY 02 — KHAJURAHO</div>
+            <div class="day-items">
+              <div class="day-item">Morning flight/train to Khajuraho</div>
+              <div class="day-item">Western Temple Group — AR tour</div>
+              <div class="day-item">Crowd prediction: Visit by 8 AM (off-peak)</div>
+              <div class="day-item">Light &amp; Sound show at sunset</div>
+            </div>
+          </div>
+
+          <div class="day-plan">
+            <div class="day-label">▸ DAY 03 — UJJAIN</div>
+            <div class="day-items">
+              <div class="day-item">Mahakaleshwar Temple — Bhasma Aarti (4 AM)</div>
+              <div class="day-item">Ram Ghat, Kshipra River</div>
+              <div class="day-item">Sacred shopping guide activated</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.15);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--text-muted);">ESTIMATED BUDGET</div>
+              <div style="font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: var(--gold);">₹8,400 / person</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+              <div style="font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--text-muted);">SAFETY SCORE</div>
+              <div style="font-family: 'Orbitron', sans-serif; font-size: 1.1rem; color: #4cff91;">94 / 100</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── SAFETY ─── -->
+  <section id="safety" class="section-pad">
+    <div class="container-xl">
+      <div class="reveal">
+        <div class="section-label">Tourist Safety System</div>
+        <h2 class="section-title">Always Safe, <span class="gold">Always Monitored</span></h2>
+        <p class="section-desc">Our multi-layered AI safety infrastructure keeps every traveler protected throughout their MP journey.</p>
+      </div>
+
+      <div class="safety-grid">
+        <div class="safety-card reveal">
+          <div class="safety-icon-wrap gold-bg">📍</div>
+          <div class="safety-name">Live GPS Tracking</div>
+          <p class="safety-desc">Real-time location sharing with family and tour groups. Automatic alerts when travelers deviate from planned routes or enter restricted zones.</p>
+        </div>
+
+        <div class="safety-card red-glow reveal">
+          <div class="safety-icon-wrap red-bg">🆘</div>
+          <div class="safety-name">Emergency SOS Button</div>
+          <p class="safety-desc">One-tap emergency alert instantly notifies local police, your emergency contacts, and nearby registered guides with your precise location.</p>
+          <button class="sos-btn"><i class="fa-solid fa-triangle-exclamation"></i> SOS Emergency</button>
+        </div>
+
+        <div class="safety-card reveal">
+          <div class="safety-icon-wrap cyan-bg">👩</div>
+          <div class="safety-name">Women Safety Mode</div>
+          <p class="safety-desc">Enhanced protection features for solo women travelers — safe zone mapping, real-time escort verification, and discreet distress signals.</p>
+        </div>
+
+        <div class="safety-card reveal">
+          <div class="safety-icon-wrap purple-bg">🤖</div>
+          <div class="safety-name">Face Recognition (Coming Soon)</div>
+          <p class="safety-desc">Future module: AI-powered face recognition at heritage site entrances to prevent unauthorized access and enhance visitor security using computer vision.</p>
+          <span class="feature-tag">Future Scope · CV</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── EXPLORE MP ─── -->
+  <section id="explore" class="section-pad">
+    <div class="container-xl">
+      <div class="reveal">
+        <div class="section-label">Discover the Heart of India</div>
+        <h2 class="section-title">Explore <span class="gold">Madhya Pradesh</span></h2>
+        <p class="section-desc">From ancient temples to primordial cave paintings — MP is a treasure trove of human civilization. Our AI brings each site to life.</p>
+      </div>
+
+      <div class="places-grid">
+
+        <div class="place-card reveal">
+          <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Lakshmana_Temple_Khajuraho_2013.jpg/1280px-Lakshmana_Temple_Khajuraho_2013.jpg" alt="Khajuraho Temples" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80'"/>
+          <div class="place-overlay">
+            <span class="place-tag">UNESCO World Heritage</span>
+            <div class="place-name">Khajuraho Temples</div>
+            <p class="place-desc">Marvel at 85 medieval Hindu and Jain temples adorned with intricate erotic carvings — masterpieces of Chandela architecture.</p>
+            <div class="place-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Chhatarpur</span>
+              <span><i class="fa-solid fa-users"></i> Crowd: Low now</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-card reveal">
+          <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Stupa1_front_NorthGate_Sanchi_2013.jpg/1280px-Stupa1_front_NorthGate_Sanchi_2013.jpg" alt="Sanchi Stupa" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1590418606746-018840f9cd0f?w=600&q=80'"/>
+          <div class="place-overlay">
+            <span class="place-tag">Buddhist Heritage</span>
+            <div class="place-name">Sanchi Stupa</div>
+            <p class="place-desc">Emperor Ashoka's 3rd century BCE Buddhist stupa — one of the oldest stone structures in India with ornate carved gateways.</p>
+            <div class="place-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Raisen District</span>
+              <span><i class="fa-solid fa-cloud-sun"></i> Clear today</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-card reveal">
+          <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mahakaleshwar_temple.jpg/800px-Mahakaleshwar_temple.jpg" alt="Ujjain Mahakal" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=80'"/>
+          <div class="place-overlay">
+            <span class="place-tag">Jyotirlinga Shrine</span>
+            <div class="place-name">Ujjain Mahakaleshwar</div>
+            <p class="place-desc">One of India's 12 sacred Jyotirlingas. Experience the mesmerizing Bhasma Aarti at dawn — a living 5,000-year-old tradition.</p>
+            <div class="place-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Ujjain</span>
+              <span><i class="fa-solid fa-users"></i> Booking open</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-card reveal">
+          <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Pachmarhi.jpg/1280px-Pachmarhi.jpg" alt="Pachmarhi" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=600&q=80'"/>
+          <div class="place-overlay">
+            <span class="place-tag">Hill Station · Nature</span>
+            <div class="place-name">Pachmarhi</div>
+            <p class="place-desc">MP's only hill station — lush Satpura forests, ancient caves, enchanting waterfalls, and prehistoric rock art in pristine wilderness.</p>
+            <div class="place-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Hoshangabad</span>
+              <span><i class="fa-solid fa-temperature-low"></i> 18°C now</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-card reveal">
+          <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Bhimbetka_rock_painting.jpg/1280px-Bhimbetka_rock_painting.jpg" alt="Bhimbetka" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80'"/>
+          <div class="place-overlay">
+            <span class="place-tag">30,000 BCE Rock Art</span>
+            <div class="place-name">Bhimbetka Caves</div>
+            <p class="place-desc">Journey into prehistoric humanity. Over 700 rock shelters with cave paintings spanning 30,000 years — a window into our ancestors.</p>
+            <div class="place-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Raisen</span>
+              <span><i class="fa-solid fa-clock"></i> Best: 7–10 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-card reveal" style="background: linear-gradient(135deg, var(--blue-card), var(--blue-mid)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px; aspect-ratio: 4/5;">
+          <div style="position: relative; z-index: 1;">
+            <div style="font-size: 3rem; margin-bottom: 16px;">🗺️</div>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--gold); margin-bottom: 12px;">+ 45 More Destinations</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px;">Orchha, Mandu, Gwalior, Bandhavgarh, Kanha and many more await your AI-guided discovery.</p>
+            <a href="#contact" class="btn-primary-glow" style="font-size: 0.65rem; padding: 12px 24px;">Explore All →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── FUTURE SCOPE ─── -->
+  <section id="future" class="section-pad">
+    <div class="container-xl">
+      <div class="reveal">
+        <div class="section-label">What's Next</div>
+        <h2 class="section-title">Future <span class="gold">Scope &amp; Vision</span></h2>
+        <p class="section-desc">Our roadmap towards a fully integrated AI tourism ecosystem for Madhya Pradesh and India.</p>
+      </div>
+
+      <div class="future-layout">
+        <div class="future-items">
+          <div class="future-item reveal">
+            <div class="future-item-icon">📱</div>
+            <div>
+              <h4>Mobile App Integration</h4>
+              <p>Native iOS &amp; Android apps with offline mode, AR navigation, and real-time push alerts — full AI capabilities in your pocket.</p>
+            </div>
+          </div>
+          <div class="future-item reveal">
+            <div class="future-item-icon">🏛️</div>
+            <div>
+              <h4>MP Tourism Board Collaboration</h4>
+              <p>Official partnership with MP State Tourism Development Corporation for data access, on-site infrastructure, and government-level safety integration.</p>
+            </div>
+          </div>
+          <div class="future-item reveal">
+            <div class="future-item-icon">🤖</div>
+            <div>
+              <h4>Smart AI Travel Assistant</h4>
+              <p>Fully autonomous AI agent that books hotels, trains, and tickets — negotiates prices, resolves issues, and manages your entire journey independently.</p>
+            </div>
+          </div>
+          <div class="future-item reveal">
+            <div class="future-item-icon">🥽</div>
+            <div>
+              <h4>VR Heritage Experiences</h4>
+              <p>Virtual reality tours of ancient MP — experience Khajuraho at its 10th-century peak, or walk through Ashoka's Sanchi as it was built.</p>
+            </div>
+          </div>
+          <div class="future-item reveal">
+            <div class="future-item-icon">🌿</div>
+            <div>
+              <h4>Eco-Tourism AI Module</h4>
+              <p>Carbon footprint tracking, sustainable travel routes, and wildlife conservation alerts integrated into trip planning for responsible tourism.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap reveal">
+          <div class="roadmap-title">⚡ Development Roadmap</div>
+          <div class="roadmap-line">
+            <div class="roadmap-item">
+              <div class="line-col">
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-connector"></div>
+              </div>
+              <div class="roadmap-content">
+                <div class="roadmap-phase">Phase 1 — Complete</div>
+                <div class="roadmap-desc">Web platform, AI itinerary generator, basic chatbot, safety module prototype</div>
+              </div>
+            </div>
+            <div class="roadmap-item">
+              <div class="line-col">
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-connector"></div>
+              </div>
+              <div class="roadmap-content">
+                <div class="roadmap-phase">Phase 2 — In Progress</div>
+                <div class="roadmap-desc">Mobile app beta, multilingual NLP chatbot, real-time crowd prediction model</div>
+              </div>
+            </div>
+            <div class="roadmap-item">
+              <div class="line-col">
+                <div class="roadmap-dot future"></div>
+                <div class="roadmap-connector"></div>
+              </div>
+              <div class="roadmap-content">
+                <div class="roadmap-phase">Phase 3 — Upcoming</div>
+                <div class="roadmap-desc">Government API integration, AR tour guide, women safety network, face recognition</div>
+              </div>
+            </div>
+            <div class="roadmap-item">
+              <div class="line-col">
+                <div class="roadmap-dot future"></div>
+                <div class="roadmap-connector"></div>
+              </div>
+              <div class="roadmap-content">
+                <div class="roadmap-phase">Phase 4 — Vision</div>
+                <div class="roadmap-desc">Full-stack autonomous AI agent, VR experiences, pan-India tourism expansion, startup launch</div>
+              </div>
+            </div>
+            <div class="roadmap-item">
+              <div class="line-col">
+                <div class="roadmap-dot future"></div>
+              </div>
+              <div class="roadmap-content">
+                <div class="roadmap-phase">Phase 5 — Scale</div>
+                <div class="roadmap-desc">Series A funding, 10 state expansion, 1M+ active travelers, UNESCO collaboration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact" class="section-pad">
+    <div class="container-xl">
+      <div class="reveal">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Start Your <span class="gold">AI Journey</span></h2>
+        <p class="section-desc">Whether you're a traveler ready to explore MP, or an investor/partner interested in our AI tourism startup — we'd love to connect.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="contact-item-text">
+              <h5>Location</h5>
+              <p>Bhopal, Madhya Pradesh, India</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div class="contact-item-text">
+              <h5>Email</h5>
+              <p>info@aismartourism.mp.in</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div class="contact-item-text">
+              <h5>Phone</h5>
+              <p>+91 98765 43210</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div class="contact-item-text">
+              <h5>Project Type</h5>
+              <p>Student Project · Startup Idea · AI Innovation</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <div class="contact-item-text">
+              <h5>AI Chatbot Support</h5>
+              <p>24 × 7 — Always available</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Ravi Sharma"/>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="ravi@email.com"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>I am a...</label>
+            <select>
+              <option>Traveler planning a trip</option>
+              <option>Investor / Partner</option>
+              <option>Government official</option>
+              <option>Media / Press</option>
+              <option>Student / Researcher</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your travel goals or collaboration interests..."></textarea>
+          </div>
+          <button class="btn-primary-glow" style="align-self: flex-start; border: none; font-size: 0.72rem; padding: 14px 32px;">
+            <i class="fa-solid fa-paper-plane"></i> &nbsp; Send Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">AI Smart Tourism MP</div>
+        <p>A student-built AI tourism platform reimagining how the world discovers Madhya Pradesh — the heart of Incredible India.</p>
+        <span class="footer-project-badge">🎓 Student Project · Startup Concept</span>
+        <div class="footer-social">
+          <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#features">AI Features</a></li>
+          <li><a href="#itinerary">Plan Itinerary</a></li>
+          <li><a href="#safety">Safety System</a></li>
+          <li><a href="#explore">Explore MP</a></li>
+          <li><a href="#future">Future Scope</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-hours">
+        <h5>Support Availability</h5>
+        <div class="hours-item">
+          <div class="day">AI Chatbot</div>
+          <div class="time">24 / 7 — Always On</div>
+        </div>
+        <div class="hours-item">
+          <div class="day">Human Support</div>
+          <div class="time">9:00 AM – 8:00 PM IST</div>
+        </div>
+        <div class="hours-item">
+          <div class="day">Emergency SOS</div>
+          <div class="time">24 / 7 — Instant Response</div>
+        </div>
+        <div class="hours-item">
+          <div class="day" style="margin-top: 8px;">Collaboration / Investor Queries</div>
+          <div class="time">Mon – Fri, 10 AM – 6 PM</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 AI Smart Tourism MP — Student Project &amp; Startup Idea &nbsp;|&nbsp; Built with ❤️ in Madhya Pradesh, India</p>
+      <p>Powered by Artificial Intelligence &nbsp;·&nbsp; Not yet affiliated with MP Tourism Board</p>
+    </div>
+  </footer>
+
+  <!-- ─── SCRIPTS ─── -->
+  <!-- Replace BOTH script blocks at the bottom of your HTML with this -->
+<!-- Replace BOTH script blocks at the bottom of your HTML with this -->
+<script>
+  // ─── CONFIGURATION ─── //
+  const API_BASE = 'http://127.0.0.1:5000';
+
+  // ─── Generate particles ─── //
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      animation-duration: ${8 + Math.random() * 12}s;
+      animation-delay: ${-Math.random() * 20}s;
+      --drift: ${(Math.random() - 0.5) * 200}px;
+      opacity: ${0.3 + Math.random() * 0.7};
+      width: ${1 + Math.random() * 2}px;
+      height: ${1 + Math.random() * 2}px;
+      background: ${Math.random() > 0.5 ? '#C9A84C' : '#00D4FF'};
+    `;
+    container.appendChild(p);
+  }
+
+  // ─── Scroll reveal ─── //
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i % 4 * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ─── Smooth nav ─── //
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        const navWrap = document.querySelector('.nav-links-wrap');
+        if (navWrap) navWrap.classList.remove('open');
+      }
+    });
+  });
+
+  // ══════════════════════════════════════════
+  //  AI TRIP PLANNER (Floating Button)
+  // ══════════════════════════════════════════
+  async function generatePlan() {
+    const name = prompt("👤 Enter your name:");
+    if (!name) return;
+
+    const budget = prompt("💰 Enter your total budget (₹):");
+    if (!budget || isNaN(budget)) {
+      alert("Please enter a valid budget number.");
+      return;
+    }
+
+    const daysStr = prompt("📅 How many days? (1-15):");
+    const days = parseInt(daysStr) || 3;
+
+    const interestsStr = prompt(
+      "🎯 Your interests? (comma separated)\n" +
+      "Options: heritage, spiritual, wildlife, nature, adventure, food, history"
+    );
+    const interests = interestsStr
+      ? interestsStr.split(',').map(i => i.trim())
+      : ['heritage', 'history'];
+
+    const travelersStr = prompt("👥 Number of travelers:");
+    const travelers = parseInt(travelersStr) || 1;
+
+    // Show loading
+    const btn = document.getElementById('ai-planner-btn');
+    const origText = btn.innerHTML;
+    btn.innerHTML = '⏳ AI Generating...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch(`${API_BASE}/plan`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name, budget: parseFloat(budget),
+          days, interests, travelers,
+          start_city: 'Bhopal'
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        showTripModal(data);
+      } else {
+        alert('❌ ' + data.message);
+      }
+    } catch (error) {
+      console.error('Backend error:', error);
+      alert(
+        '⚠️ Cannot connect to AI backend.\n\n' +
+        'Make sure the server is running:\n' +
+        '  cd ai-smart-tourism\n' +
+        '  pip install -r requirements.txt\n' +
+        '  python run.py'
+      );
+    } finally {
+      btn.innerHTML = origText;
+      btn.disabled = false;
+    }
+  }
+
+  // ── Show Trip Result Modal ── //
+  function showTripModal(data) {
+    const plan = data.itinerary;
+
+    let itineraryHTML = '';
+    if (plan.itinerary) {
+      plan.itinerary.forEach(day => {
+        itineraryHTML += `<div style="margin-bottom:16px;">
+          <div style="color:#00D4FF;font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;margin-bottom:6px;">
+            ▸ DAY ${day.day} — ${day.title}
+          </div>`;
+        day.activities.forEach(act => {
+          itineraryHTML += `<div style="display:flex;align-items:center;gap:8px;margin:4px 0 4px 12px;font-size:0.88rem;color:rgba(240,237,230,0.7);">
+            <span style="color:#C9A84C;">→</span>
+            <span>${act.time} — ${act.activity}</span>
+          </div>`;
+        });
+        itineraryHTML += `</div>`;
+      });
+    }
+
+    const modal = document.createElement('div');
+    modal.id = 'trip-modal';
+    modal.innerHTML = `
+      <div style="position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;">
+        <div style="background:#0D1F38;border:1px solid rgba(201,168,76,0.3);border-radius:16px;max-width:700px;width:100%;max-height:85vh;overflow-y:auto;padding:36px;position:relative;">
+          <button onclick="document.getElementById('trip-modal').remove()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:#C9A84C;font-size:1.5rem;cursor:pointer;">✕</button>
+
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:#00D4FF;margin-bottom:8px;">AI GENERATED ITINERARY</div>
+          <h2 style="font-family:'Orbitron',sans-serif;font-size:1.3rem;color:#C9A84C;margin-bottom:24px;">${plan.trip_name || 'Your MP Trip'}</h2>
+
+          ${itineraryHTML}
+
+          <div style="border-top:1px solid rgba(201,168,76,0.15);padding-top:16px;margin-top:16px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(240,237,230,0.45);">ESTIMATED COST</span>
+              <span style="font-family:'Orbitron',sans-serif;font-size:1.1rem;color:#C9A84C;">₹${plan.total_estimated_cost}/person</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(240,237,230,0.45);">SAFETY SCORE</span>
+              <span style="font-family:'Orbitron',sans-serif;font-size:1.1rem;color:#4cff91;">${plan.safety_score}/100</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:rgba(240,237,230,0.45);">AI CONFIDENCE</span>
+              <span style="font-family:'Orbitron',sans-serif;font-size:1.1rem;color:#00D4FF;">${plan.ai_confidence}%</span>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;padding:12px;background:rgba(201,168,76,0.08);border-radius:8px;border:1px solid rgba(201,168,76,0.15);">
+            <div style="font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;color:#C9A84C;margin-bottom:6px;">WEATHER ADVISORY</div>
+            <p style="font-size:0.85rem;color:rgba(240,237,230,0.6);">${plan.weather_advisory?.advisory || 'Check local weather before traveling.'}</p>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  // ══════════════════════════════════════════
+  //  CONTACT FORM HANDLER
+  // ══════════════════════════════════════════
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    const submitBtn = contactForm.querySelector('.btn-primary-glow');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const inputs = contactForm.querySelectorAll('input, select, textarea');
+        const name = inputs[0]?.value?.trim();
+        const email = inputs[1]?.value?.trim();
+        const userType = inputs[2]?.value;
+        const message = inputs[3]?.value?.trim();
+
+        if (!name || !email || !message) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+
+        submitBtn.innerHTML = '⏳ Sending...';
+        submitBtn.disabled = true;
+
+        try {
+          const res = await fetch(`${API_BASE}/contact`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, user_type: userType, message })
+          });
+          const data = await res.json();
+          alert(data.message);
+          if (data.success) {
+            inputs.forEach(inp => { inp.value = ''; });
+          }
+        } catch (err) {
+          alert('⚠️ Could not connect to server. Please try again later.');
+        } finally {
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> &nbsp; Send Message';
+          submitBtn.disabled = false;
+        }
+      });
+    }
+  }
+
+  // ══════════════════════════════════════════
+  //  SOS BUTTON HANDLER
+  // ══════════════════════════════════════════
+  const sosBtn = document.querySelector('.sos-btn');
+  if (sosBtn) {
+    sosBtn.addEventListener('click', async () => {
+      if (!confirm('🆘 Are you in an EMERGENCY?\n\nThis will alert emergency services with your location.')) return;
+
+      const userName = prompt('Your name (for responders):') || 'Anonymous';
+      const phone = prompt('Your phone number:') || '';
+
+      let lat = null, lng = null, locationName = 'Unknown';
+
+      // Try to get GPS location
+      if (navigator.geolocation) {
+        try {
+          const pos = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 5000 });
+          });
+          lat = pos.coords.latitude;
+          lng = pos.coords.longitude;
+          locationName = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+        } catch (e) {
+          console.warn('GPS unavailable');
+        }
+      }
+
+      try {
+        const res = await fetch(`${API_BASE}/sos`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_name: userName, phone,
+            latitude: lat, longitude: lng,
+            location_name: locationName,
+            alert_type: 'general'
+          })
+        });
+        const data = await res.json();
+        alert(data.message);
+      } catch (err) {
+        alert(
+          '⚠️ Could not reach server!\n\n' +
+          'CALL THESE NUMBERS NOW:\n' +
+          '• Police: 100\n' +
+          '• Ambulance: 108\n' +
+          '• Women Helpline: 1091'
+        );
+      }
+    });
+  }
+
+  // ══════════════════════════════════════════
+  //  CHATBOT WIDGET
+  // ══════════════════════════════════════════
+  function createChatWidget() {
+    const widget = document.createElement('div');
+    widget.id = 'chat-widget';
+    widget.innerHTML = `
+      <style>
+        #chat-widget-container {
+          position: fixed; bottom: 80px; right: 20px; z-index: 9998;
+          width: 380px; max-height: 520px;
+          background: #0D1F38; border: 1px solid rgba(201,168,76,0.3);
+          border-radius: 16px; display: none; flex-direction: column;
+          overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        #chat-header {
+          padding: 16px 20px; background: rgba(201,168,76,0.1);
+          border-bottom: 1px solid rgba(201,168,76,0.2);
+          display: flex; align-items: center; justify-content: space-between;
+        }
+        #chat-header h4 {
+          font-family: 'Orbitron', sans-serif; font-size: 0.75rem;
+          color: #C9A84C; margin: 0;
+        }
+        #chat-close {
+          background: none; border: none; color: #C9A84C;
+          font-size: 1.2rem; cursor: pointer;
+        }
+        #chat-messages {
+          flex: 1; overflow-y: auto; padding: 16px;
+          display: flex; flex-direction: column; gap: 12px;
+          max-height: 350px; min-height: 250px;
+        }
+        .chat-msg {
+          max-width: 85%; padding: 10px 14px;
+          border-radius: 12px; font-size: 0.85rem; line-height: 1.5;
+          white-space: pre-wrap;
+        }
+        .chat-msg.bot {
+          background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.15);
+          color: rgba(240,237,230,0.8); align-self: flex-start; border-bottom-left-radius: 4px;
+        }
+        .chat-msg.user {
+          background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.25);
+          color: #F0EDE6; align-self: flex-end; border-bottom-right-radius: 4px;
+        }
+        .chat-suggestions {
+          display: flex; gap: 6px; flex-wrap: wrap; padding: 0 16px 8px;
+        }
+        .chat-sug-btn {
+          font-family: 'Space Mono', monospace; font-size: 0.55rem;
+          letter-spacing: 0.1em; padding: 4px 10px; border-radius: 100px;
+          background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+          color: #C9A84C; cursor: pointer; transition: background 0.2s;
+        }
+        .chat-sug-btn:hover { background: rgba(201,168,76,0.2); }
+        #chat-input-area {
+          display: flex; gap: 8px; padding: 12px 16px;
+          border-top: 1px solid rgba(201,168,76,0.15);
+        }
+        #chat-input {
+          flex: 1; background: rgba(5,13,26,0.6); border: 1px solid rgba(201,168,76,0.2);
+          border-radius: 8px; padding: 10px 14px; color: #F0EDE6;
+          font-family: 'Crimson Pro', serif; font-size: 0.9rem; outline: none;
+        }
+        #chat-input:focus { border-color: rgba(201,168,76,0.5); }
+        #chat-send {
+          background: linear-gradient(90deg, #C9A84C, #E8C96A);
+          border: none; border-radius: 8px; padding: 10px 16px;
+          color: #050D1A; cursor: pointer; font-size: 0.9rem;
+          transition: opacity 0.2s;
+        }
+        #chat-send:hover { opacity: 0.85; }
+        @media (max-width: 500px) {
+          #chat-widget-container { width: calc(100vw - 40px); right: 20px; bottom: 80px; }
+        }
+      </style>
+
+      <div id="chat-widget-container">
+        <div id="chat-header">
+          <h4>🤖 AI Travel Assistant</h4>
+          <button id="chat-close" onclick="toggleChat()">✕</button>
+        </div>
+        <div id="chat-messages">
+          <div class="chat-msg bot">🙏 Namaste! I'm your AI travel assistant for Madhya Pradesh. Ask me about places, budget, safety, food, or help planning your trip!</div>
+        </div>
+        <div class="chat-suggestions" id="chat-suggestions">
+          <button class="chat-sug-btn" onclick="sendSuggestion('Popular places in MP')">Popular Places</button>
+          <button class="chat-sug-btn" onclick="sendSuggestion('Plan a 3-day trip')">Plan Trip</button>
+          <button class="chat-sug-btn" onclick="sendSuggestion('Budget guide')">Budget Guide</button>
+          <button class="chat-sug-btn" onclick="sendSuggestion('Safety information')">Safety Info</button>
+        </div>
+        <div id="chat-input-area">
+          <input id="chat-input" type="text" placeholder="Ask about MP tourism..." onkeypress="if(event.key==='Enter')sendChat()"/>
+          <button id="chat-send" onclick="sendChat()">➤</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(widget);
+  }
+
+  let chatOpen = false;
+  const chatSessionId = 'session-' + Math.random().toString(36).substr(2, 8);
+
+  function toggleChat() {
+    const container = document.getElementById('chat-widget-container');
+    chatOpen = !chatOpen;
+    container.style.display = chatOpen ? 'flex' : 'none';
+  }
+
+  async function sendChat() {
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    if (!message) return;
+
+    const messages = document.getElementById('chat-messages');
+    messages.innerHTML += `<div class="chat-msg user">${message}</div>`;
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+      const res = await fetch(`${API_BASE}/chatbot`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message, language: 'en', session_id: chatSessionId })
+      });
+      const data = await res.json();
+
+      messages.innerHTML += `<div class="chat-msg bot">${data.response || 'Sorry, please try again.'}</div>`;
+
+      // Update suggestions
+      const sugContainer = document.getElementById('chat-suggestions');
+      if (data.suggestions && data.suggestions.length > 0) {
+        sugContainer.innerHTML = data.suggestions.map(s =>
+          `<button class="chat-sug-btn" onclick="sendSuggestion('${s}')">${s}</button>`
+        ).join('');
+      }
+    } catch (err) {
+      messages.innerHTML += `<div class="chat-msg bot">⚠️ Cannot connect to AI server. Please check if the backend is running.</div>`;
+    }
+
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function sendSuggestion(text) {
+    document.getElementById('chat-input').value = text;
+    sendChat();
+  }
+
+  // Initialize chat widget
+  createChatWidget();
+</script>
+
+<!-- FLOATING BUTTONS -->
+<div style="position:fixed; bottom:20px; right:20px; z-index:9997; display:flex; flex-direction:column; gap:10px; align-items:flex-end;">
+  <!-- Chat Toggle -->
+  <button onclick="toggleChat()" style="
+    width:56px; height:56px; border-radius:50%;
+    background:linear-gradient(135deg, #C9A84C, #00D4FF);
+    border:none; cursor:pointer; font-size:1.4rem;
+    box-shadow:0 4px 20px rgba(201,168,76,0.4);
+    transition: transform 0.2s;
+    display:flex; align-items:center; justify-content:center;
+  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    💬
+  </button>
+
+  <!-- AI Trip Planner -->
+  <button id="ai-planner-btn" onclick="generatePlan()" style="
+    padding:14px 24px; border-radius:50px;
+    background:linear-gradient(90deg, #C9A84C, #E8C96A);
+    border:none; cursor:pointer;
+    font-family:'Space Mono',monospace; font-size:0.68rem;
+    letter-spacing:0.1em; text-transform:uppercase;
+    color:#050D1A; font-weight:700;
+    box-shadow:0 4px 30px rgba(201,168,76,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display:flex; align-items:center; gap:8px;
+  " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+    <span>🤖</span> AI Trip Planner
+  </button>
+</div>
